@@ -4,8 +4,8 @@ import { budgetItems } from "@/lib/dashboard-data";
 
 export default function BudgetPage() {
   return (
-    <div className="space-y-6">
-      <header className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-5">
+    <div className="space-y-6 p-6">
+      <header className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
             Budget planner
@@ -16,11 +16,11 @@ export default function BudgetPage() {
         </div>
       </header>
 
-      <div className="space-y-4">
+      <div className="space-y-6">
         {budgetItems.map((item) => (
           <div
             key={item.name}
-            className="rounded-[24px] border border-white/10 bg-zinc-900/70 p-4 shadow-lg shadow-black/20 backdrop-blur"
+            className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 shadow-lg shadow-black/20 backdrop-blur"
           >
             <div className="mb-2 flex items-center justify-between">
               <p className="font-semibold text-white">{item.name}</p>

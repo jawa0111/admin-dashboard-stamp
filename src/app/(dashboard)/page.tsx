@@ -107,56 +107,54 @@ export default function OverviewPage() {
   });
 
   return (
-    <div className="space-y-6">
-      <header className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-5">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
-              Premium operations board
-            </p>
-            <h2 className="mt-1 text-2xl font-semibold text-white sm:text-3xl">
-              Streetwear finance and inventory command center
-            </h2>
-          </div>
-          <div className="flex items-center gap-2">
-            <label className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-zinc-400">
-              <Search className="h-4 w-4" />
-              <input
-                value={searchQuery}
-                onChange={(event) => setSearchQuery(event.target.value)}
-                className="bg-transparent outline-none"
-                placeholder="Search expenses"
-              />
-            </label>
-            <button
-              type="button"
-              onClick={() => setShowAlerts((prev) => !prev)}
-              className="rounded-2xl border border-white/10 bg-white/5 p-2.5 text-zinc-200"
-            >
-              <Bell className="h-4 w-4" />
-            </button>
-          </div>
-          {showAlerts && (
-            <div className="mt-4 rounded-2xl border border-white/10 bg-black/70 p-3 text-sm text-zinc-300">
-              <p className="mb-2 font-medium text-white">Live alerts</p>
-              <ul className="space-y-2">
-                <li>• Low stock on Phase Jacket and Studio Hoody</li>
-                <li>• Marketing budget at 86% usage</li>
-                <li>• Two pending supplier payments</li>
-              </ul>
-            </div>
-          )}
+    <div className="space-y-6 p-6">
+      <header className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
+            Premium operations board
+          </p>
+          <h2 className="mt-1 text-2xl font-semibold text-white sm:text-3xl">
+            Streetwear finance and inventory command center
+          </h2>
+        </div>
+        <div className="flex items-center gap-2">
+          <label className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-zinc-400">
+            <Search className="h-4 w-4" />
+            <input
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              className="bg-transparent outline-none"
+              placeholder="Search expenses"
+            />
+          </label>
+          <button
+            type="button"
+            onClick={() => setShowAlerts((prev) => !prev)}
+            className="rounded-2xl border border-white/10 bg-white/5 p-2.5 text-zinc-200"
+          >
+            <Bell className="h-4 w-4" />
+          </button>
         </div>
       </header>
+      {showAlerts && (
+        <div className="rounded-2xl border border-white/10 bg-black/70 p-3 text-sm text-zinc-300">
+          <p className="mb-2 font-medium text-white">Live alerts</p>
+          <ul className="space-y-2">
+            <li>• Low stock on Phase Jacket and Studio Hoody</li>
+            <li>• Marketing budget at 86% usage</li>
+            <li>• Two pending supplier payments</li>
+          </ul>
+        </div>
+      )}
 
-      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {kpis.map((item, index) => (
           <motion.div
             key={item.label}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.04 }}
-            className="rounded-[24px] border border-white/10 bg-zinc-900/70 p-4 shadow-lg shadow-black/20 backdrop-blur"
+            className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 shadow-lg shadow-black/20 backdrop-blur"
           >
             <div className="flex items-center justify-between">
               <p className="text-sm text-zinc-400">{item.label}</p>
@@ -174,7 +172,7 @@ export default function OverviewPage() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-xl shadow-black/20 backdrop-blur-xl sm:p-5"
+          className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 shadow-xl shadow-black/20 backdrop-blur-xl"
         >
           <div className="mb-4 flex items-center justify-between">
             <div>
@@ -248,7 +246,7 @@ export default function OverviewPage() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-xl shadow-black/20 backdrop-blur-xl sm:p-5"
+          className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 shadow-xl shadow-black/20 backdrop-blur-xl"
         >
           <div className="mb-4 flex items-center justify-between">
             <div>
@@ -286,7 +284,7 @@ export default function OverviewPage() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-xl shadow-black/20 backdrop-blur-xl sm:p-5"
+          className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 shadow-xl shadow-black/20 backdrop-blur-xl"
         >
           <div className="mb-4 flex items-center justify-between">
             <div>
@@ -336,7 +334,7 @@ export default function OverviewPage() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-xl shadow-black/20 backdrop-blur-xl sm:p-5"
+          className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 shadow-xl shadow-black/20 backdrop-blur-xl"
         >
           <div className="mb-4 flex items-center justify-between">
             <div>
@@ -378,7 +376,7 @@ export default function OverviewPage() {
         </motion.div>
       </section>
 
-      <section className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-xl shadow-black/20 backdrop-blur-xl sm:p-5">
+      <section className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 shadow-xl shadow-black/20 backdrop-blur-xl">
         <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">

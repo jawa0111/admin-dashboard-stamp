@@ -75,18 +75,17 @@ export default function ExpensesPage() {
   });
 
   return (
-    <div className="space-y-6">
-      <header className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-5">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
-              Expense management
-            </p>
-            <h2 className="mt-1 text-2xl font-semibold text-white sm:text-3xl">
-              Track and approve operational expenses
-            </h2>
-          </div>
-          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+    <div className="space-y-6 p-6">
+      <header className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
+            Expense management
+          </p>
+          <h2 className="mt-1 text-2xl font-semibold text-white sm:text-3xl">
+            Track and approve operational expenses
+          </h2>
+        </div>
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-transparent bg-pink-500 px-2.5 text-sm font-medium whitespace-nowrap text-black transition-all hover:bg-pink-600">
               <Plus className="h-4 w-4" />
               Add Expense
@@ -237,10 +236,9 @@ export default function ExpensesPage() {
               </DialogFooter>
             </DialogContent>
           </Dialog>
-        </div>
       </header>
 
-      <div className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-xl shadow-black/20 backdrop-blur-xl sm:p-5">
+      <div className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 shadow-xl shadow-black/20 backdrop-blur-xl">
         <div className="mb-4 flex gap-2">
           <label className="flex flex-1 items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-zinc-400">
             <Search className="h-4 w-4" />

@@ -50,67 +50,69 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <ExpenseProvider>
-      <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(255,20,147,0.1),_transparent_50%),linear-gradient(135deg,_#0a0e27_0%,_#141d3a_45%,_#0f1628_100%)] text-zinc-100">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-4 lg:flex-row lg:px-6 lg:py-6">
-          <aside className="w-full rounded-[28px] border border-white/10 bg-black/50 p-4 shadow-2xl shadow-black/40 backdrop-blur-xl lg:w-72 lg:p-5 lg:sticky lg:h-screen lg:top-0">
-            <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-500 to-pink-700 text-white">
-                <Sparkles className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">Stamp</p>
-                <h1 className="text-lg font-semibold text-white">Studio Admin</h1>
-              </div>
+      <div className="min-h-screen bg-zinc-950 text-zinc-100">
+        {/* Fixed Sidebar on Left - Full Height */}
+        <aside className="fixed left-0 top-0 z-50 h-screen w-72 border-r border-white/10 bg-black/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-xl">
+          <div className="mb-6 flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-500 to-pink-700 text-white">
+              <Sparkles className="h-5 w-5" />
             </div>
-
-            <nav className="space-y-2">
-              {navItems.map((item) => {
-                const Icon =
-                  {
-                    overview: LayoutDashboard,
-                    expenses: ReceiptText,
-                    products: Package,
-                    inventory: Boxes,
-                    sales: ShoppingCart,
-                    budget: Wallet,
-                    marketing: BarChart3,
-                    profit: Calculator,
-                    reports: TrendingUp,
-                    settings: Settings,
-                  }[item.id] || LayoutDashboard;
-
-                return (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className={`flex w-full items-center justify-between rounded-2xl px-3 py-3 text-sm transition ${
-                      isActive(item.href)
-                        ? "bg-gradient-to-r from-pink-500/20 to-transparent text-pink-400"
-                        : "text-zinc-400 hover:bg-white/5 hover:text-white"
-                    }`}
-                  >
-                    <span className="flex items-center gap-3">
-                      <Icon className="h-4 w-4" />
-                      {item.label}
-                    </span>
-                    <ChevronRight className="h-4 w-4" />
-                  </Link>
-                );
-              })}
-            </nav>
-
-            <div className="mt-6 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-3">
-              <span className="text-xs text-zinc-400">Theme</span>
-              <button
-                onClick={toggleTheme}
-                className="rounded-lg bg-white/10 p-2 transition hover:bg-white/20"
-              >
-                {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-              </button>
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">Stamp</p>
+              <h1 className="text-lg font-semibold text-white">Studio Admin</h1>
             </div>
-          </aside>
+          </div>
 
-          <main className="flex-1">{children}</main>
+          <nav className="space-y-2">
+            {navItems.map((item) => {
+              const Icon =
+                {
+                  overview: LayoutDashboard,
+                  expenses: ReceiptText,
+                  products: Package,
+                  inventory: Boxes,
+                  sales: ShoppingCart,
+                  budget: Wallet,
+                  marketing: BarChart3,
+                  profit: Calculator,
+                  reports: TrendingUp,
+                  settings: Settings,
+                }[item.id] || LayoutDashboard;
+
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`flex w-full items-center justify-between rounded-2xl px-3 py-3 text-sm transition ${
+                    isActive(item.href)
+                      ? "bg-gradient-to-r from-pink-500/20 to-transparent text-pink-400"
+                      : "text-zinc-400 hover:bg-white/5 hover:text-white"
+                  }`}
+                >
+                  <span className="flex items-center gap-3">
+                    <Icon className="h-4 w-4" />
+                    {item.label}
+                  </span>
+                  <ChevronRight className="h-4 w-4" />
+                </Link>
+              );
+            })}
+          </nav>
+
+          <div className="mt-6 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-3">
+            <span className="text-xs text-zinc-400">Theme</span>
+            <button
+              onClick={toggleTheme}
+              className="rounded-lg bg-white/10 p-2 transition hover:bg-white/20"
+            >
+              {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </button>
+          </div>
+        </aside>
+
+        {/* Main Content Area */}
+        <div className="flex flex-col pl-72 pr-0 py-0">
+          <main>{children}</main>
         </div>
 
         <Toaster />

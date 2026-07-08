@@ -4,8 +4,8 @@ import { productCosts } from "@/lib/dashboard-data";
 
 export default function ProductsPage() {
   return (
-    <div className="space-y-6">
-      <header className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-5">
+    <div className="space-y-6 p-6">
+      <header className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
             Product management
@@ -16,7 +16,7 @@ export default function ProductsPage() {
         </div>
       </header>
 
-      <div className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-xl shadow-black/20 backdrop-blur-xl sm:p-5">
+      <div className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 shadow-xl shadow-black/20 backdrop-blur-xl">
         <div className="mb-4">
           <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
             Product cost details
