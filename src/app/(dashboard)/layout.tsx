@@ -99,14 +99,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               })}
             </nav>
 
-            <div className="mt-6 rounded-3xl border border-pink-500/20 bg-pink-500/10 p-4">
-              <p className="text-sm text-pink-200">Launch-ready economy</p>
-              <p className="mt-1 text-2xl font-semibold text-white">84% runway health</p>
-              <p className="mt-2 text-sm text-zinc-400">
-                Healthy cash flow, under budget, and rising conversion velocity.
-              </p>
-            </div>
-
             <div className="mt-6 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-3">
               <span className="text-xs text-zinc-400">Theme</span>
               <button
