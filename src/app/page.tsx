@@ -70,14 +70,14 @@ const navItems = [
 
 const kpis = [
   { label: "Total Revenue", value: "$1.24M", delta: "+12.4%", tone: "text-emerald-400" },
-  { label: "Total Expenses", value: "$486K", delta: "+4.8%", tone: "text-amber-400" },
+  { label: "Total Expenses", value: "$486K", delta: "+4.8%", tone: "text-cyan-400" },
   { label: "Net Profit", value: "$312K", delta: "+9.1%", tone: "text-emerald-400" },
   { label: "Gross Profit", value: "$754K", delta: "+15.2%", tone: "text-emerald-400" },
   { label: "Monthly Profit", value: "$84K", delta: "+8.3%", tone: "text-emerald-400" },
   { label: "Total Orders", value: "2,184", delta: "+6.7%", tone: "text-sky-400" },
-  { label: "Inventory Value", value: "$342K", delta: "-1.2%", tone: "text-amber-400" },
+  { label: "Inventory Value", value: "$342K", delta: "-1.2%", tone: "text-cyan-400" },
   { label: "Available Cash", value: "$126K", delta: "+3.4%", tone: "text-emerald-400" },
-  { label: "Pending Payments", value: "$18K", delta: "2 pending", tone: "text-amber-400" },
+  { label: "Pending Payments", value: "$18K", delta: "2 pending", tone: "text-cyan-400" },
   { label: "Marketing Spend", value: "$43K", delta: "+2.1%", tone: "text-sky-400" },
 ];
 
@@ -255,11 +255,11 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.16),_transparent_30%),linear-gradient(135deg,_#060606_0%,_#0f0f0f_45%,_#090909_100%)] text-zinc-100">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(255,20,147,0.1),_transparent_50%),linear-gradient(135deg,_#0a0e27_0%,_#141d3a_45%,_#0f1628_100%)] text-zinc-100">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-4 lg:flex-row lg:px-6 lg:py-6">
         <aside className="w-full rounded-[28px] border border-white/10 bg-black/50 p-4 shadow-2xl shadow-black/40 backdrop-blur-xl lg:w-72 lg:p-5">
           <div className="mb-6 flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-yellow-600 text-black">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-500 to-pink-700 text-white">
               <Sparkles className="h-5 w-5" />
             </div>
             <div>
@@ -278,7 +278,7 @@ export default function Home() {
                   onClick={() => handleNavigation(item.id)}
                   className={`flex w-full items-center justify-between rounded-2xl px-3 py-3 text-sm transition ${
                     activeSection === item.id
-                      ? "bg-gradient-to-r from-amber-500/20 to-transparent text-amber-300"
+                      ? "bg-gradient-to-r from-pink-500/20 to-transparent text-pink-400"
                       : "text-zinc-400 hover:bg-white/5 hover:text-white"
                   }`}
                 >
@@ -292,8 +292,8 @@ export default function Home() {
             })}
           </nav>
 
-          <div className="mt-6 rounded-3xl border border-amber-500/20 bg-amber-500/10 p-4">
-            <p className="text-sm text-amber-200">Launch-ready economy</p>
+          <div className="mt-6 rounded-3xl border border-pink-500/20 bg-pink-500/10 p-4">
+            <p className="text-sm text-pink-200">Launch-ready economy</p>
             <p className="mt-1 text-2xl font-semibold text-white">84% runway health</p>
             <p className="mt-2 text-sm text-zinc-400">Healthy cash flow, under budget, and rising conversion velocity.</p>
           </div>
@@ -303,7 +303,7 @@ export default function Home() {
           <header className="rounded-[28px] border border-white/10 bg-zinc-900/70 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-5">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-amber-400">Premium operations board</p>
+                <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">Premium operations board</p>
                 <h2 className="mt-1 text-2xl font-semibold text-white sm:text-3xl">Streetwear finance and inventory command center</h2>
               </div>
               <div className="flex items-center gap-2">
@@ -325,12 +325,12 @@ export default function Home() {
                 </button>
                 <button
                   onClick={toggleTheme}
-                  className="rounded-2xl border border-amber-500/20 bg-amber-500/10 px-3 py-2 text-sm text-amber-200"
+                  className="rounded-2xl border border-pink-500/20 bg-pink-500/10 px-3 py-2 text-sm text-pink-200"
                 >
                   {isDark ? "Light" : "Dark"} mode
                 </button>
                 <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-yellow-600 text-sm font-semibold text-black">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 to-pink-700 text-sm font-semibold text-black">
                     AM
                   </div>
                   <div className="text-left">
@@ -363,7 +363,7 @@ export default function Home() {
               >
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-zinc-400">{item.label}</p>
-                  <div className="rounded-full bg-amber-500/10 p-2 text-amber-400">
+                  <div className="rounded-full bg-pink-500/10 p-2 text-cyan-400">
                     <CircleDollarSign className="h-4 w-4" />
                   </div>
                 </div>
@@ -387,16 +387,16 @@ export default function Home() {
                   <AreaChart data={revenueData}>
                     <defs>
                       <linearGradient id="revenueFill" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#facc15" stopOpacity={0.45} />
-                        <stop offset="100%" stopColor="#facc15" stopOpacity={0.02} />
+                        <stop offset="0%" stopColor="#ff1493" stopOpacity={0.45} />
+                        <stop offset="100%" stopColor="#ff1493" stopOpacity={0.02} />
                       </linearGradient>
                     </defs>
                     <CartesianGrid stroke="rgba(255,255,255,0.08)" vertical={false} />
                     <XAxis dataKey="month" stroke="#71717a" tickLine={false} axisLine={false} />
                     <YAxis stroke="#71717a" tickLine={false} axisLine={false} />
                     <Tooltip />
-                    <Area type="monotone" dataKey="revenue" stroke="#facc15" fill="url(#revenueFill)" />
-                    <Area type="monotone" dataKey="expenses" stroke="#64748b" fill="transparent" />
+                    <Area type="monotone" dataKey="revenue" stroke="#ff1493" fill="url(#revenueFill)" />
+                    <Area type="monotone" dataKey="expenses" stroke="#00d4ff" fill="transparent" />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
@@ -444,7 +444,7 @@ export default function Home() {
                     <XAxis dataKey="month" stroke="#71717a" tickLine={false} axisLine={false} />
                     <YAxis stroke="#71717a" tickLine={false} axisLine={false} />
                     <Tooltip />
-                    <Line type="monotone" dataKey="profit" stroke="#facc15" strokeWidth={3} dot={{ r: 4 }} />
+                    <Line type="monotone" dataKey="profit" stroke="#ff1493" strokeWidth={3} dot={{ r: 4 }} />
                   </LineChart>
                 </ResponsiveContainer>
               </div>
@@ -465,7 +465,7 @@ export default function Home() {
                 ].map((item) => (
                   <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-3">
                     <div className="mb-1 flex items-center gap-2">
-                      <AlertTriangle className="h-4 w-4 text-amber-400" />
+                      <AlertTriangle className="h-4 w-4 text-cyan-400" />
                       <p className="text-sm font-medium text-white">{item.label}</p>
                     </div>
                     <p className="text-sm text-zinc-400">{item.text}</p>
@@ -482,7 +482,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-white">Operational spend control</h3>
               </div>
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                <DialogTrigger className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-transparent bg-amber-500 px-2.5 text-sm font-medium whitespace-nowrap text-black transition-all hover:bg-amber-400">
+                <DialogTrigger className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-transparent bg-pink-500 px-2.5 text-sm font-medium whitespace-nowrap text-black transition-all hover:bg-pink-600">
                   <Plus className="h-4 w-4" />
                   Add Expense
                 </DialogTrigger>
@@ -552,7 +552,7 @@ export default function Home() {
                   </div>
                   <DialogFooter className="mt-4">
                     <Button variant="outline" onClick={() => setIsDialogOpen(false)}>Cancel</Button>
-                    <Button onClick={handleSubmit} className="bg-amber-500 text-black hover:bg-amber-400">Save expense</Button>
+                    <Button onClick={handleSubmit} className="bg-amber-500 text-black hover:bg-pink-600">Save expense</Button>
                   </DialogFooter>
                 </DialogContent>
               </Dialog>
@@ -562,7 +562,7 @@ export default function Home() {
               <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
                 <p className="text-sm text-zinc-400">Largest expense</p>
                 <p className="text-lg text-white">Fabric roll order</p>
-                <p className="text-sm text-amber-400">$12.25K</p>
+                <p className="text-sm text-cyan-400">$12.25K</p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
                 <p className="text-sm text-zinc-400">Average monthly spend</p>
@@ -594,7 +594,7 @@ export default function Home() {
                         <td className="px-3 py-3">{expense.vendor}</td>
                         <td className="px-3 py-3">${expense.amount.toLocaleString()}</td>
                         <td className="px-3 py-3">
-                          <span className={`rounded-full px-2.5 py-1 text-xs ${expense.status === "Approved" ? "bg-emerald-500/10 text-emerald-300" : "bg-amber-500/10 text-amber-300"}`}>
+                          <span className={`rounded-full px-2.5 py-1 text-xs ${expense.status === "Approved" ? "bg-emerald-500/10 text-emerald-300" : "bg-pink-500/10 text-pink-300"}`}>
                             {expense.status}
                           </span>
                         </td>
@@ -617,7 +617,7 @@ export default function Home() {
                   <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">Product cost</p>
                   <h3 className="text-xl font-semibold text-white">Variation cost management</h3>
                 </div>
-                <div className="rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-1 text-sm text-amber-300">Auto-calculated</div>
+                <div className="rounded-full border border-pink-500/20 bg-pink-500/10 px-3 py-1 text-sm text-pink-300">Auto-calculated</div>
               </div>
               <div className="overflow-x-auto">
                 <table className="min-w-full text-sm">
@@ -655,7 +655,7 @@ export default function Home() {
                   <div key={item.design} className="rounded-2xl border border-white/10 bg-white/5 p-3">
                     <div className="flex items-center justify-between">
                       <p className="font-medium text-white">{item.design}</p>
-                      <span className="rounded-full bg-amber-500/10 px-2.5 py-1 text-xs text-amber-300">{item.available} left</span>
+                      <span className="rounded-full bg-pink-500/10 px-2.5 py-1 text-xs text-pink-300">{item.available} left</span>
                     </div>
                     <p className="mt-1 text-sm text-zinc-400">{item.color} · {item.size} · Reserved {item.reserved}</p>
                   </div>
@@ -679,7 +679,7 @@ export default function Home() {
                     <XAxis dataKey="month" stroke="#71717a" tickLine={false} axisLine={false} />
                     <YAxis stroke="#71717a" tickLine={false} axisLine={false} />
                     <Tooltip />
-                    <Bar dataKey="orders" fill="#facc15" radius={[8, 8, 0, 0]} />
+                    <Bar dataKey="orders" fill="#00d4ff" radius={[8, 8, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -708,7 +708,7 @@ export default function Home() {
                       <p className="text-sm text-zinc-400">{item.usage}% used</p>
                     </div>
                     <div className="h-2 rounded-full bg-zinc-800">
-                      <div className="h-2 rounded-full bg-gradient-to-r from-amber-400 to-yellow-500" style={{ width: `${item.usage}%` }} />
+                      <div className="h-2 rounded-full bg-gradient-to-r from-pink-500 to-pink-600" style={{ width: `${item.usage}%` }} />
                     </div>
                     <div className="mt-2 flex items-center justify-between text-sm text-zinc-400">
                       <span>Spent ${item.spent.toLocaleString()}</span>
@@ -781,7 +781,7 @@ export default function Home() {
                   </div>
                   <div className="rounded-2xl bg-zinc-800/70 p-3">
                     <p className="text-sm text-zinc-400">Margin</p>
-                    <p className="text-lg font-semibold text-amber-300">38.7%</p>
+                    <p className="text-lg font-semibold text-pink-300">38.7%</p>
                   </div>
                 </div>
               </div>
@@ -811,7 +811,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center justify-between text-sm text-zinc-400">
                     <span>{item.status}</span>
-                    <span className="text-amber-300">{item.type}</span>
+                    <span className="text-pink-300">{item.type}</span>
                   </div>
                 </div>
               ))}
@@ -824,7 +824,7 @@ export default function Home() {
                 <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">User roles</p>
                 <h3 className="text-xl font-semibold text-white">Role-based access</h3>
               </div>
-              <div className="rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-1 text-sm text-amber-300">RBAC enabled</div>
+              <div className="rounded-full border border-pink-500/20 bg-pink-500/10 px-3 py-1 text-sm text-pink-300">RBAC enabled</div>
             </div>
             <div className="grid gap-3 md:grid-cols-4">
               {[
@@ -834,7 +834,7 @@ export default function Home() {
                 { role: "Marketing Manager", scope: "Campaign tracking" },
               ].map((entry) => (
                 <div key={entry.role} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <div className="mb-2 flex items-center gap-2 text-amber-300">
+                  <div className="mb-2 flex items-center gap-2 text-pink-300">
                     <Users className="h-4 w-4" />
                     <p className="font-medium text-white">{entry.role}</p>
                   </div>
@@ -849,7 +849,7 @@ export default function Home() {
       <button
         type="button"
         onClick={() => setIsDialogOpen(true)}
-        className="fixed bottom-5 right-5 flex items-center gap-2 rounded-full bg-amber-500 px-4 py-3 text-sm font-semibold text-black shadow-xl shadow-amber-500/20 transition hover:bg-amber-400"
+        className="fixed bottom-5 right-5 flex items-center gap-2 rounded-full bg-pink-500 px-4 py-3 text-sm font-semibold text-black shadow-xl shadow-pink-500/20 transition hover:bg-pink-600"
       >
         <Plus className="h-4 w-4" />
         Add Expense
